@@ -1,0 +1,19 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.VRM4URender.cpp.obj": [
+			"VRM4URender.gen.cpp.obj",
+			"VRM4URender.init.gen.cpp.obj",
+			"VRM4U_RenderSubsystem.gen.cpp.obj",
+			"VrmExtensionRimFilterData.gen.cpp.obj",
+			"VrmSceneCaptureComponent.gen.cpp.obj",
+			"VrmSceneViewExtensionSettings.gen.cpp.obj",
+			"VRM4URender.cpp.obj",
+			"VRM4U_RenderSubsystem.cpp.obj",
+			"VrmExtensionRimFilterData.cpp.obj",
+			"VrmSceneCaptureComponent.cpp.obj",
+			"VrmSceneViewExtension.cpp.obj",
+			"VrmSceneViewExtensionSettings.cpp.obj"
+		]
+	}
+}

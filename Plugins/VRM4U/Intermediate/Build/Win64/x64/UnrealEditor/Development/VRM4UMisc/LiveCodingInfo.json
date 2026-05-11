@@ -1,0 +1,8 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.VRM4UMisc.cpp.obj": [
+			"VRM4UMisc.cpp.obj"
+		]
+	}
+}

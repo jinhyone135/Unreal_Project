@@ -1,0 +1,19 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.VRM4UCapture.cpp.obj": [
+			"AnimNode_VrmVMC.gen.cpp.obj",
+			"VRM4UCapture.init.gen.cpp.obj",
+			"VRM4U_VMCSubsystem.gen.cpp.obj",
+			"VrmCaptureManager.gen.cpp.obj",
+			"VrmMocopiReceiver.gen.cpp.obj",
+			"VrmVMCObject.gen.cpp.obj",
+			"AnimNode_VrmVMC.cpp.obj",
+			"VRM4UCapture.cpp.obj",
+			"VRM4U_VMCSubsystem.cpp.obj",
+			"VrmCaptureManager.cpp.obj",
+			"VrmMocopiReceiver.cpp.obj",
+			"VrmVMCObject.cpp.obj"
+		]
+	}
+}

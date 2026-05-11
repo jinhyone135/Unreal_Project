@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-VRM4UImporter.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\UE_5.3\Unreal_Project\Intermediate\Build\Win64\x64\ProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.InclOrderUnreal5_0.h.obj"
+"D:\UE_5.3\Unreal_Project\Plugins\VRM4U\Intermediate\Build\Win64\x64\UnrealEditor\Development\VRM4UImporter\Module.VRM4UImporter.cpp.obj"
+"D:\UE_5.3\Unreal_Project\Plugins\VRM4U\Intermediate\Build\Win64\x64\UnrealEditor\Development\VRM4UImporter\Default.rc2.res"
+/OUT:"D:\UE_5.3\Unreal_Project\Plugins\VRM4U\Intermediate\Build\Win64\x64\UnrealEditor\Development\VRM4UImporter\UnrealEditor-VRM4UImporter.lib"

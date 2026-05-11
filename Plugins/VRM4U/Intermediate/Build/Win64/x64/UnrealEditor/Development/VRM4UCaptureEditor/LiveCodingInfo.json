@@ -1,0 +1,11 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.VRM4UCaptureEditor.cpp.obj": [
+			"AnimGraphNode_VrmVMC.gen.cpp.obj",
+			"VRM4UCaptureEditor.init.gen.cpp.obj",
+			"AnimGraphNode_VrmVMC.cpp.obj",
+			"VRM4UCaptureEditor.cpp.obj"
+		]
+	}
+}
