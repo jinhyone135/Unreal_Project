@@ -63,6 +63,10 @@ public:
     UPROPERTY(BlueprintReadOnly) TObjectPtr<ACombatManager> CombatManager;
     UPROPERTY(BlueprintReadOnly) TObjectPtr<UUserWidget> BattleUIInstance;
 
+    // 게임 승리시 버튼 누르면 상점으로 이동
+    UPROPERTY(EditDefaultsOnly, Category = "Levels") FName ShopLevelName = TEXT("TestShopLevel");
+    UFUNCTION(BlueprintCallable, Category = "Combat") void GoToShopAfterVictory();
+
 protected:
     void RegisterExistingParty();
     void RegisterExistingEnemies();

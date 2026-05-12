@@ -230,7 +230,8 @@ void ACombatGameMode::HandleCombatEnded(bool bVictory)
         }
         else
         {
-            UGameplayStatics::OpenLevel(this, MapLevelName);
+            UE_LOG(LogTemp, Warning, TEXT("[CombatGameMode] Victory - waiting for player choice."));
+            return;
         }
     }
     else
@@ -238,4 +239,10 @@ void ACombatGameMode::HandleCombatEnded(bool bVictory)
         GI->EndCurrentRun();
         UGameplayStatics::OpenLevel(this, TitleLevelName);
     }
+}
+
+// 게임 승리시 버튼 누르면 상점으로 이동하는것 구현
+void ACombatGameMode::GoToShopAfterVictory()
+{
+    UGameplayStatics::OpenLevel(this, ShopLevelName);
 }
