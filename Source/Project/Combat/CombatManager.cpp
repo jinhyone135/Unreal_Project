@@ -159,24 +159,41 @@ void ACombatManager::StartEnemyTurn()
     TArray<APartyCharacter*> RawParty;
     for (auto& P : Party) RawParty.Add(P);
 
+    AEnemyBase* ActingEnemy = nullptr;
+
+    // 이번 턴에 행동할 적 하나만 고름
     for (AActor* EnemyActor : Enemies)
     {
         AEnemyBase* Enemy = Cast<AEnemyBase>(EnemyActor);
         if (!Enemy) continue;
         if (EnemyHP <= 0) break;
 
-        Enemy->ExecuteIntent(this);
+        ActingEnemy = Enemy;
+        break;
+    }
+
+    // 적 파티는 한 번만 행동
+    if (ActingEnemy)
+    {
+        ActingEnemy->ExecuteIntent(this);
+
         CheckVictoryDefeat();
         if (CurrentPhase == ETurnPhase::Defeat) return;
+    }
 
-        Enemy->GenerateIntent(RawParty);
+    // 모든 적의 다음 턴 의도는 갱신
+    for (AActor* EnemyActor : Enemies)
+    {
+        if (AEnemyBase* Enemy = Cast<AEnemyBase>(EnemyActor))
+        {
+            Enemy->GenerateIntent(RawParty);
+        }
     }
 
     CheckVictoryDefeat();
+
     if (CurrentPhase == ETurnPhase::PlayerTurn || CurrentPhase == ETurnPhase::EnemyTurn)
     {
-        // ENEMY TURN 배너 애니가 끝날 시간을 확보한 뒤 PlayerTurn 호출
-        // → PLAYER TURN 배너가 ENEMY TURN 배너와 겹치지 않도록 딜레이
         if (UWorld* World = GetWorld())
         {
             World->GetTimerManager().SetTimer(
@@ -189,7 +206,7 @@ void ACombatManager::StartEnemyTurn()
         }
         else
         {
-            StartPlayerTurn(); // 월드 없으면 fallback (실제로는 발생 안 함)
+            StartPlayerTurn();
         }
     }
 }
