@@ -239,8 +239,11 @@ bool ACombatManager::TryPlayCard(UCardBase* Card, AActor* Target)
                             || Card->GetTargetType() == ETargetType::SingleAlly);
     if (bNeedsTarget && !Target) return false;
 
-    if (!SpendCost(Card->GetCost())) return false;
-
+    if (!SpendCost(Card->GetCost()))
+    {
+        OnNotEnoughCost.Broadcast();
+        return false;
+    }
     for (APartyCharacter* Member : Party)
     {
         if (Member && Member->GetCharacterID() == Card->GetOwnerCharacterID())
