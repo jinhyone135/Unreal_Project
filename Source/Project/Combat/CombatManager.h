@@ -29,6 +29,8 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealed, int32, Amount);
 //밑 2개 데미지 UI 연결
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnEnemyDamaged, int32, Amount);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerDamaged, int32, Amount);
+//코스트 부족하면 코스트가 부족하다고 알림
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnNotEnoughCost);
 
 UCLASS()
 class PROJECT_API ACombatManager : public AActor
@@ -99,6 +101,9 @@ public:
     // 적 턴 끝나고 플레이어 턴 시작까지 대기 시간 (초). ENEMY TURN 배너 애니메이션 길이에 맞추기
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat|Timing")
     float TurnTransitionDelay = 1.5f;
+
+    //코스트 부족하면 코스트가 부족하다고 알림
+    UPROPERTY(BlueprintAssignable) FOnNotEnoughCost OnNotEnoughCost;
 
 protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat") int32 MaxCostPerTurn = 6;
