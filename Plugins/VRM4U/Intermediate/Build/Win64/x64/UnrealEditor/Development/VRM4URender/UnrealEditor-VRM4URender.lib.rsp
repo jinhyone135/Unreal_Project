@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-VRM4URender.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\unreal\New folder\Intermediate\Build\Win64\x64\ProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.InclOrderUnreal5_0.h.obj"
+"C:\unreal\New folder\Plugins\VRM4U\Intermediate\Build\Win64\x64\UnrealEditor\Development\VRM4URender\Module.VRM4URender.cpp.obj"
+"C:\unreal\New folder\Plugins\VRM4U\Intermediate\Build\Win64\x64\UnrealEditor\Development\VRM4URender\Default.rc2.res"
+/OUT:"C:\unreal\New folder\Plugins\VRM4U\Intermediate\Build\Win64\x64\UnrealEditor\Development\VRM4URender\UnrealEditor-VRM4URender.lib"

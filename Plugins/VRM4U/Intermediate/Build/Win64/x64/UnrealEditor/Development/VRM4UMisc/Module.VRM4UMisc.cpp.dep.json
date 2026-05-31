@@ -1,0 +1,16 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\unreal\\new folder\\plugins\\vrm4u\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\vrm4umisc\\module.vrm4umisc.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unreal\\new folder\\intermediate\\build\\win64\\x64\\projecteditor\\development\\unrealed\\sharedpch.unrealed.cpp20.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "c:\\unreal\\new folder\\plugins\\vrm4u\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\vrm4umisc\\definitions.vrm4umisc.h",
+            "c:\\unreal\\new folder\\plugins\\vrm4u\\source\\vrm4umisc\\private\\vrm4umisc.cpp",
+            "c:\\unreal\\new folder\\plugins\\vrm4u\\source\\vrm4umisc\\private\\vrm4umisc.h",
+            "c:\\unreal\\new folder\\plugins\\vrm4u\\source\\vrm4umisc\\private\\vrm4umisclog.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
