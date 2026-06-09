@@ -67,14 +67,18 @@ bool UShopLibrary::RemoveCardAt(UBAGameInstance* GI, int32 MasterDeckIndex)
 
 bool UShopLibrary::UpgradeCardAt(UBAGameInstance* GI, int32 MasterDeckIndex)
 {
-    if (!GI || !GI->CurrentRun || !GI->CurrentRun->MasterDeck || !GI->CardDataTable)
-        return false;
+    if (!GI || !GI->CurrentRun || !GI->CurrentRun->MasterDeck) return false;
 
     URunState* Run = GI->CurrentRun;
     const int32 Price = GetCardUpgradePrice(GI);
 
     if (Run->Gold < Price) return false;
-    if (!Run->MasterDeck->UpgradeCardAt(MasterDeckIndex, GI->CardDataTable)) return false;
+
+    // MasterDeck::UpgradeCardAt 가 false 반환하는 경우:
+    //  - 잘못된 인덱스
+    //  - 이미 강화된 카드 (카드당 1회 제한)
+    // → 골드 차감 전에 막아서 환불 처리 불필요
+    if (!Run->MasterDeck->UpgradeCardAt(MasterDeckIndex)) return false;
 
     Run->SpendGold(Price);
     return true;

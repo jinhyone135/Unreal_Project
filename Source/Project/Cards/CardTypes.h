@@ -44,6 +44,8 @@ struct FCardDataRow : public FTableRowBase
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<TSubclassOf<UCardEffect>> EffectClasses;
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName UpgradedCardID;
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSoftObjectPtr<UTexture2D> CardArt;
+    // 강화 카드 전용 일러스트 — 비워두면 CardArt 를 그대로 사용 (fallback)
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) TSoftObjectPtr<UTexture2D> UpgradedCardArt;
 };
 
 USTRUCT(BlueprintType)
