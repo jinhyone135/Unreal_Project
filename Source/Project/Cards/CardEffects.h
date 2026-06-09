@@ -38,6 +38,8 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float DamagePercent = 50.f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DurationTurns = 1;
     virtual void Execute_Implementation(FCombatContext& Context) override;
+    // 강화 시 데미지 증가량 1.5배 고정 (예: 10 → 15)
+    virtual void ApplyUpgradeToValues(float Multiplier) override;
 };
 
 UCLASS(DisplayName="Effect: Cost Refund")
@@ -47,4 +49,6 @@ class PROJECT_API UCostRefundEffect : public UCardEffect
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 RefundAmount = 2;
     virtual void Execute_Implementation(FCombatContext& Context) override;
+    // 강화 시 코스트 회복량 1.5배 고정 (예: 2 → 3)
+    virtual void ApplyUpgradeToValues(float Multiplier) override;
 };
